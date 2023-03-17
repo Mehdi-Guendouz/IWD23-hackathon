@@ -5,10 +5,9 @@ const Doctor = require('../models/DoctorModel')
 const {authPatient}=require('../middleware/auth.js')
 const router = express.Router()
 
-router.get('/',async(req, res)=>{
+router.get('/',authPatient,async(req, res)=>{
     try{
     const {speciality}=req.body
- 
     const doctors=await Doctor.find({speciality:speciality})
     if (!doctors){
         res.status(200).json([])

@@ -56,5 +56,15 @@ const requestedAppsDoctor=async (req, res)=>{
         res.status(400).json(err)
     }
     }
+//get today's appointment
+const todaysappointment=async (req, res)=>{
+    try{
+    const date = new Date();
+       const today=await Appointment.find({doctor:req.user,status:"accepted",date:date})
+       res.status(200).json(today)
+    }catch(err){
+        res.status(400).json(err)
+    }
+    }
 
-module.exports = { requestAppointment,acceptAppointment,myAppointments,myAppointmentsDoctor,requestedAppsDoctor}
+module.exports = { requestAppointment,acceptAppointment,myAppointments,myAppointmentsDoctor,requestedAppsDoctor,todaysappointment}
