@@ -26,7 +26,7 @@ const signupDoctor = async function(req, res) {
     const {email, password,firstName,familyName} = req.body
     console.log(email)
     try {
-      const doctor = await Doctor.signup(password,firstName,familyName,email)
+      const doctor = await Doctor.signup(firstName, familyName, email, password, speciality, phoneNumber, birthDate, gender, graduationYear, address, bloodType)
       token =createtoken({doctor:doctor._id})
       res.status(200).cookie('token',token,{httpOnly:true,}).json({token})
     } catch (error) {
@@ -53,7 +53,7 @@ const loginPatient = async (req, res) => {
       const {email, password,firstName,familyName} = req.body
       console.log(email)
       try {
-        const user = await Patient.signup(password,firstName,familyName,email)
+        const user = await Patient.signup(firstName, familyName, email, password, birthDate, gender, bloodType, height, weight, allergies, chronicalIlnesses)
         token =createtoken({patient:user._id})
         res.status(200).cookie('token',token,{httpOnly:true,}).json({token})
       } catch (error) {
