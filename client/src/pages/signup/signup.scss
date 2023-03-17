@@ -69,6 +69,14 @@
                         border-radius: 8px;
                         text-align: center;
                         cursor: pointer;
+
+                        .icon{
+                            transition: all 0.5s ease;
+                        }
+
+                        .green{
+                            color: #66CA98;
+                        }
                     }
                    
                     div{
@@ -81,7 +89,7 @@
                             justify-content: center;
                             height: 40px;
                             width: 40px;
-                            background-color: #66CA98;
+                            // background-color: #66CA98;
                             border-radius: 8px;
 
                             .class-white{
