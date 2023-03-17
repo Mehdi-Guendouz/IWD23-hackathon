@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Treatment from './components/Treatment/Treatment';
 import {DoctorProfile} from './pages/DoctorProfile';
+import { ChatPage } from './pages/ChatPage';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path='/doctor' element={<DoctorProfile/>} />
         {/* <Route path='/' element={<Home />} /> */}
       </Route>
+        <Route path='/chat' element={<ChatPage/>} />
       </Routes>
     </BrowserRouter>
   );
