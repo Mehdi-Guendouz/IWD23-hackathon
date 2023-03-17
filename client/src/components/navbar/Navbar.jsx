@@ -15,8 +15,8 @@ const Navbar = () => {
                     <li><Link className={`${currentPage === "medical" ? "green" : ""}`} to='/' onClick={() =>setCurrentPage("medical")}>Medical History</Link></li>
                     <li><Link className={`${currentPage === "virtual" ? "green" : ""}`} to='/' onClick={() =>setCurrentPage("virtual")}>Virtual Diagnosis</Link></li>
                 </ul>
-                <button>Login</button>
             </nav>
+            <button>Login</button>
         </div>
     );
 }
