@@ -6,14 +6,6 @@ const Schema = mongoose.Schema
 
 
 
-const AddressSchema = mongoose.Schema({
-    streetNumber: Number,
-    streetName: String,
-    ZIPcode: Number,
-    city:String,
-  });
-
-
 
 
   const PatientSchema = new Schema({
@@ -41,11 +33,11 @@ const AddressSchema = mongoose.Schema({
       },
    
     gender:{
-        type :String,
+        type :String,   
         required:false,
     },
     
-    address:AddressSchema,
+
   
 },{timestamps:true})
 

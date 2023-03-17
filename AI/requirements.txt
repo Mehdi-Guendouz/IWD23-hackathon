@@ -1,0 +1,7 @@
+scikit-learn==1.2.2,
+pandas==1.4.4,
+pandas-datareader==0.10.0,
+pandas-gbq==0.17.9,
+pandas-profiling==3.2.0,
+flask==2.2.3,
+numpy==1.22.4

@@ -6,8 +6,11 @@ const { postDoctorRating,getDoctorRating }= require('../controllers/ratingContro
 const router = express.Router()
 
 // doctor route 
-router.post('/doctor/add', postDoctorRating)
+router.patch('/doctor/add', postDoctorRating)
 router.get('/doctor', getDoctorRating)
+// patient route 
+router.patch('/patient/add', postDoctorRating)
+router.get('/patient', getDoctorRating)
 
 
 

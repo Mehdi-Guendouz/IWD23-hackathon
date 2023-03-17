@@ -13,9 +13,6 @@ const AddressSchema = mongoose.Schema({
     city:String,
   });
 
-
-
-
   const DoctorSchema = new Schema({
     
     firstName :{
