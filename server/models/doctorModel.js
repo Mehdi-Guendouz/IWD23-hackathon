@@ -11,6 +11,8 @@ const AddressSchema = mongoose.Schema({
     streetName: String,
     ZIPcode: Number,
     city:String,
+    longitude:Number,
+    latitude:Number
   });
 
   const DoctorSchema = new Schema({
@@ -33,7 +35,7 @@ const AddressSchema = mongoose.Schema({
         required: [true, 'Please add a password'],
       },
     speciality:{type:String},
-
+    phoneNumber:Number,
     rating:{score:Number,number:Number},
     birthDate:{type:Date,
       },
@@ -42,13 +44,14 @@ const AddressSchema = mongoose.Schema({
         type :String,
         required:false,
     },
-    
+    graduationYear:Number,
     address:AddressSchema,
-  
+    bloodType:String,
+    patientsNumber:Number,
 },{timestamps:true})
 
 // static create an account method
-DoctorSchema.statics.signup = async function(password,firstName,familyName,email,gender,address,speciality,birthDate) {
+DoctorSchema.statics.signup = async function(firstName, familyName, email, password, speciality, phoneNumber, birthDate, gender, graduationYear, address, bloodType) {
   // validation
   if (!email || !password) {
     throw Error('You must fill the email and the password field')
@@ -71,7 +74,7 @@ DoctorSchema.statics.signup = async function(password,firstName,familyName,email
     score:0,
     number:0,
   }
-  const doctor = await this.create({password:hash,firstName,familyName,gender,address,email,speciality,birthDate,rating})
+  const doctor = await this.create({firstName, familyName, email,password:hash, speciality, phoneNumber, rating, birthDate, gender, graduationYear, address, bloodType})
 
   return doctor
 }

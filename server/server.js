@@ -25,7 +25,7 @@ app.use((req, res,next)=>{
 })
  
 //routes
-app.use('/api/visits',visitRoutes)
+app.use('/api/visit',visitRoutes)
 app.use('/api',authRoutes)
 app.use('/api/rating',ratingRoutes)
 app.use('/api/appointment',appointmentRoutes)

@@ -36,13 +36,18 @@ const Schema = mongoose.Schema
         type :String,   
         required:false,
     },
-    
+    bloodType:String,
+    height:Number,
+    weight:Number,
+    allergies:[String],
+    chronicalIlnesses:[String]
+
 
   
 },{timestamps:true})
 
 // static create an account method
-PatientSchema.statics.signup = async function(password,firstName,familyName,email,gender,address,speciality,birthDate) {
+PatientSchema.statics.signup = async function(firstName, familyName, email, password, birthDate, gender, bloodType, height, weight, allergies, chronicalIlnesses) {
   // validation
   if (!email || !password) {
     throw Error('You must fill the email and the password field')
@@ -65,7 +70,7 @@ PatientSchema.statics.signup = async function(password,firstName,familyName,emai
     score:0,
     number:0,
   }
-  const Patient = await this.create({password:hash,firstName,familyName,gender,address,email,rating,speciality,birthDate})
+  const Patient = await this.create({firstName, familyName, email, password:hash, birthDate, gender, bloodType, height, weight, allergies, chronicalIlnesses})
 
   return Patient
 }
