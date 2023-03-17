@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import "./treatment.scss";
 
 const Treatment = () => {
@@ -28,6 +29,7 @@ const Treatment = () => {
                         <span>Enrollment Is Quick And Easy</span>
                     </div>
                 </div>
+                <Link to='/'  >make a virtual diagnosis </Link>
             </div>
         </div>
     );

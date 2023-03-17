@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <div className='nav-container'>
             <div>logo</div>
-            <div className="right">
+            <nav className="right">
                 <ul>
                     <li><Link className={`${currentPage === "home" ? "green" : ""}`} to='/' onClick={() =>setCurrentPage("home")}>Home</Link></li>
                     <li><Link className={`${currentPage === "doctors" ? "green" : ""}`} to='/' onClick={() =>setCurrentPage("doctors")}>Doctors</Link></li>
@@ -16,7 +16,7 @@ const Navbar = () => {
                     <li><Link className={`${currentPage === "virtual" ? "green" : ""}`} to='/' onClick={() =>setCurrentPage("virtual")}>Virtual Diagnosis</Link></li>
                 </ul>
                 <button>Login</button>
-            </div>
+            </nav>
         </div>
     );
 }
