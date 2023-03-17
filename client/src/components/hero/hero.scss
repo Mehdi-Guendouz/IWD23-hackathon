@@ -4,7 +4,7 @@
     justify-content: space-between;
     background-color: #F8F8F8;
     height: 100vh;
-    margin-top: 30px;
+    margin-top: 10px;
     overflow: hidden;
     position: relative;
 
@@ -120,14 +120,15 @@
             button{
                 background-color: #FEB710;
                 border-radius: 8px;
-                padding: 5px 12px;
+                padding: 5px 15px;
                 font-size: 16px;
                 font-weight: 400;
                 display: flex;
                 align-items: center;
-                gap: 10px;
+                gap: 15px;
                 border: none;
                 color: white;
+                cursor: pointer;
             }
 
         }

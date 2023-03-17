@@ -7,7 +7,7 @@ const Navbar = () => {
 
     return (
         <div className='nav-container'>
-            <div>logo</div>
+            <img src="./icons/logo.png" alt="logo" />
             <nav className="right">
                 <ul>
                     <li><Link className={`${currentPage === "home" ? "green" : ""}`} to='/' onClick={() =>setCurrentPage("home")}>Home</Link></li>
