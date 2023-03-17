@@ -1,0 +1,185 @@
+.card-container{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 16px;
+    padding: 10px 20px;
+    gap: 50px;
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        
+
+
+        .info{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 40px;
+            position: relative;
+
+            .profile{
+                height: 100px;
+                width: 100px;
+
+                img{
+                    height: 100%;
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        .appointment{
+            padding: 20px 40px;
+            display: flex;
+            // justify-content: center;
+            // align-items: center;
+
+            a{
+                min-width: 500px;
+                padding: 17px 15px;
+                border-radius: 10px;
+                background-color: #66CA98;
+                font-size: 18;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                div{
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+        
+        .desc{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+
+            
+            h3{
+                font-size: 18px;
+                color: #1C1F1E;
+            }
+
+            span{
+                font-weight: 500;
+                font-size: 14px;
+                color: #A7A6A5;
+            }
+
+            .contact{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+
+        .price{
+            display: flex;
+            align-self: flex-end;
+            margin-left: 90px;
+            font-size: 28px;
+            font-weight: 600;
+
+            img{
+                position: absolute;
+                transform: translate(100px, -55px);
+            }
+        }
+
+        .rating{
+            display: flex;
+            // align-items: center;
+            // justify-content: center;
+            gap: 100px;
+            // transform: translateX(30px);
+            padding: 20px 40px;
+
+            .item{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+                
+
+                span{
+                    text-align: center;
+                }
+
+                div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 20px 15px;
+                    background-color: #EFF2F1;
+                    border-radius: 8px;
+                    color: #1C1F1E;
+                    font-weight: 600;
+                    font-size: 18px;
+                    min-width: 100px;
+                    
+                }
+            }
+        }
+    }
+
+    .right{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 20px ;
+        gap: 10px;
+
+        h3{
+            text-transform: capitalize;
+            font-size: 18px;
+            color: #1C1F1E;
+            font-weight: 600;
+        }
+
+        p{
+            color: #A7A6A5;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 17px;
+        }
+
+        h4{
+            font-size: 18px;
+            line-height: 21px;
+            color: #1C1F1E;
+            font-weight: 600;
+            padding: 5px 0px;
+        }
+
+        .location-container{
+            display: flex;
+            gap: 30px;
+            color: #A7A6A5;
+            font-size: 15px;
+            font-weight: 500;
+
+            .item{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                img{
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+        }
+
+        map{
+            display: flex;
+            align-items: center;
+        }
+    }
+
+}

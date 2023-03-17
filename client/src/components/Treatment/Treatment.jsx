@@ -11,7 +11,7 @@ const Treatment = () => {
                     <img src="./img/treatment.png" alt="treatment" className='treat' />
                 </div>
                 <div className="right">
-                    <h2>we are always ensure best <br /> medical treatment for your <br /> health </h2>
+                    <h2>we always ensure best Doctor <br /> choices and appointments <br /> scheduling </h2>
                     <div className="items">
                         <div className="check-item">
                             <img src="./icons/check.png" alt="check" />
