@@ -64,7 +64,6 @@
                         align-items: center;
                         gap: 7px;
                         background-color: #EFF2F1;
-                        color: #66CA98;
                         width: 160px;
                         padding: 10px 7px;
                         border-radius: 8px;
@@ -84,6 +83,10 @@
                             width: 40px;
                             background-color: #66CA98;
                             border-radius: 8px;
+
+                            .class-white{
+                                color: white !important;
+                            }
                         }
 
                         input{

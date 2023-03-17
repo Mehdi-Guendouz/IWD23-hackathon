@@ -8,7 +8,7 @@ const Hero = () => {
     return (
         <div className='hero'>
             <div className="left">
-                <h1>Find <span className='green'>your doctor</span> and make an appointment</h1>
+                <h1>Find <span className='green'>Your Doctor</span> and make an appointment</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, totam magnam. Nam alias nisi corporis fuga id iste quam voluptates?</p>
             </div>
             <div className="right">
