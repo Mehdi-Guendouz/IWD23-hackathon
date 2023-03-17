@@ -5,6 +5,8 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Treatment from './components/Treatment/Treatment';
 import {DoctorProfile} from './pages/DoctorProfile';
+import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
 
 
 function App() {
@@ -25,8 +27,9 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path='/doctor' element={<DoctorProfile/>} />
-        {/* <Route path='/' element={<Home />} /> */}
       </Route>
+      <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<Signup />} />
       </Routes>
     </BrowserRouter>
   );
