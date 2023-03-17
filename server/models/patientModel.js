@@ -36,7 +36,7 @@ const AddressSchema = mongoose.Schema({
         required: [true, 'Please add a password'],
       },
 
-    rating:{type:Number},
+    rating:{score:Number,number:Number},
     birthDate:{type:Date,
       },
    
@@ -69,8 +69,11 @@ PatientSchema.statics.signup = async function(password,firstName,familyName,emai
 
   const salt = await bcrypt.genSalt(10)
   const hash = await bcrypt.hash(password, salt)
-
-  const Patient = await this.create({password:hash,firstName,familyName,gender,address,email,speciality,birthDate})
+  const rating={
+    score:0,
+    number:0,
+  }
+  const Patient = await this.create({password:hash,firstName,familyName,gender,address,email,rating,speciality,birthDate})
 
   return Patient
 }

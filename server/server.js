@@ -4,13 +4,16 @@ require('dotenv').config()
 const express =require('express')
 const app = express()
 const cors = require('cors');
+cookieParser=require('cookie-parser');
+app.use(cookieParser());
 app.use(cors());
-//omport mongoose
+//import mongoose
 const mongoose = require('mongoose')
 
 //import routers 
 const visitRoutes=require('./routes/visitsRoutes')
 const authRoutes=require('./routes/authRoutes')
+const ratingRoutes=require('./routes/ratingRoutes')
 
 
 
@@ -24,7 +27,7 @@ app.use((req, res,next)=>{
 //routes
 app.use('/api/visits',visitRoutes)
 app.use('/api',authRoutes)
-
+app.use('/api/rating',ratingRoutes)
 
 //connect to db
 mongoose.connect(process.env.db_uri).then(()=>{

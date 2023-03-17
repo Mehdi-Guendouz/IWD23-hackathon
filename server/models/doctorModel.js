@@ -37,7 +37,7 @@ const AddressSchema = mongoose.Schema({
       },
     speciality:{type:String},
 
-    rating:{type:Number},
+    rating:{score:Number,number:Number},
     birthDate:{type:Date,
       },
    
@@ -70,8 +70,11 @@ DoctorSchema.statics.signup = async function(password,firstName,familyName,email
 
   const salt = await bcrypt.genSalt(10)
   const hash = await bcrypt.hash(password, salt)
-
-  const doctor = await this.create({password:hash,firstName,familyName,gender,address,email,speciality,birthDate})
+  const rating={
+    score:0,
+    number:0,
+  }
+  const doctor = await this.create({password:hash,firstName,familyName,gender,address,email,speciality,birthDate,rating})
 
   return doctor
 }

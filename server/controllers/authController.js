@@ -13,7 +13,7 @@ const loginDoctor = async (req, res) => {
 
   try {
     const user = await Doctor.login(email, password)
-    const token = createtoken(user._id)
+    const token = createtoken({doctor:user._id})
     res.status(200).cookie('token',token,{httpOnly:true,}).json({token})
   } catch (error) {
     res.status(400).json({status:'err',error: error.message,user:false})
@@ -27,7 +27,7 @@ const signupDoctor = async function(req, res) {
     console.log(email)
     try {
       const doctor = await Doctor.signup(password,firstName,familyName,email)
-      token =createtoken(doctor._id)
+      token =createtoken({doctor:doctor._id})
       res.status(200).cookie('token',token,{httpOnly:true,}).json({token})
     } catch (error) {
       res.status(400).json({error: error.message})
@@ -40,7 +40,7 @@ const loginPatient = async (req, res) => {
   
     try {
       const user = await Patient.login(email, password)
-      const token = createtoken(user._id)
+      const token = createtoken({patient:user._id})
       res.status(200).cookie('token',token,{httpOnly:true,}).json({token})
     } catch (error) {
       res.status(400).json({status:'err',error: error.message,user:false})
@@ -54,7 +54,7 @@ const loginPatient = async (req, res) => {
       console.log(email)
       try {
         const user = await Patient.signup(password,firstName,familyName,email)
-        token =createtoken(user._id)
+        token =createtoken({patient:user._id})
         res.status(200).cookie('token',token,{httpOnly:true,}).json({token})
       } catch (error) {
         res.status(400).json({error: error.message})
