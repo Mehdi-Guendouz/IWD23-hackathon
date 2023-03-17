@@ -5,14 +5,15 @@ const { loginDoctor,signupDoctor,loginPatient,signupPatient} = require('../contr
 
 const router = express.Router()
 
-// login route 
+// Doctor side 
 router.post('/doctor/login', loginDoctor)
 router.post('/doctor/signup', signupDoctor)
 
- 
+ //Patient side
 router.post('/patient/login', loginPatient)
 router.post('/patient/signup', signupPatient)
 
+//logout (for both)
 router.get("/logout", (req, res) => {
     res
       .cookie("token", "", {

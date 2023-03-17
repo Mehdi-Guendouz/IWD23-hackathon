@@ -74,7 +74,8 @@ DoctorSchema.statics.signup = async function(firstName, familyName, email, passw
     score:0,
     number:0,
   }
-  const doctor = await this.create({firstName, familyName, email,password:hash, speciality, phoneNumber, rating, birthDate, gender, graduationYear, address, bloodType})
+  const patientsNumber=0
+  const doctor = await this.create({firstName, familyName, email,password:hash, speciality, phoneNumber, rating, birthDate, gender, graduationYear, address, bloodType,patientsNumber})
 
   return doctor
 }
