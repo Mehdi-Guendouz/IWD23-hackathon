@@ -7,7 +7,7 @@ const Services = () => {
         <div className='container-services '>
             <div className="wrapper">
                 <div className="right">
-                    <h2>Different Types Of Department <br /> To Service For Your Health</h2>
+                    <h2>Different Types Of extra features <br />to facilitate your journey with <br />your doctor</h2>
                     <p>ln terms of patient demand we have different sort of departement <br /> to serve best treatment in the city</p>
                     <div className="items">
                         <div className="check-item">
