@@ -66,7 +66,7 @@ export const SearchSection = () => {
             })}
             
         </div>
-        <div className="px-2 flex flex-row justify-between overflow-x-scroll space-x-2 w-full">
+        <div className="px-2 flex flex-row justify-between overflow-x-scroll space-x-2 w-full py-4">
             <div className="min-w-[9rem] bg-white rounded-2xl h-28 flex flex-col space-y-2 items-center justify-center">
                 <HeartIcon className="w-12 h-12"/>
                 <span className="font-medium">Cardiologyst</span>
