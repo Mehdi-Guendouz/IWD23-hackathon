@@ -4,7 +4,7 @@ import './steps.scss';
 
 const Steps = () => {
     return (
-        <div className='container'>
+        <div className='container-steps'>
             <div className="wrapper">
                 <img src="./img/background.png" alt="background" className='back-img' />
                 <div className="top">

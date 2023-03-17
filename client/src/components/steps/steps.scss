@@ -1,4 +1,4 @@
-.container{
+.container-steps{
     
     // margin-top: 20px;
     display: flex;
@@ -28,17 +28,19 @@
             display: flex;
             align-items: center;
             gap: 150px;
-            margin-top: 70px;
+            margin-top: 60px;
 
             h2{
                 font-weight: 600;
                 font-size: 28px;
                 color: white;
+                line-height: 42px;
             }
 
             p{
                 font-weight: 400;
                 font-size: 14px;
+                line-height: 21px;
                 color: #F0FAFC;
             }
 
