@@ -1,0 +1,41 @@
+.nav-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .right{
+        display: flex;
+        gap: 40px;
+
+        ul{
+            display: flex;
+            align-items: center;
+            gap: 60px;
+
+            a{
+                color: #1E1E1E;
+                font-weight: 400;
+                font-size: 16px;
+            }
+            .green{
+                color: #66CA98
+            }
+        }
+
+        button{
+            color: white;
+            background-color: #66CA98;
+            padding: 10px 17px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 400;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+
+    
+}
+

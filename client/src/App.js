@@ -1,10 +1,17 @@
 import './App.scss';
+import {BrowserRouter, Route , Routes} from 'react-router-dom';
+import Home from './pages/Home';
+
 
 function App() {
   return (
-    <div className="App">
-      This is the main
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        {/* <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
