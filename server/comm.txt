@@ -1,2 +1,0 @@
-npm i express mongoose body-parser
- npm i -D nodemon (add "app": "nodemon server.js" to your scripts tag under the package.json file)

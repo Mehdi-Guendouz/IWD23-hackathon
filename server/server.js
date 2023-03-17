@@ -7,8 +7,10 @@ const cors = require('cors');
 app.use(cors());
 //omport mongoose
 const mongoose = require('mongoose')
+
 //import routers 
 const visitRoutes=require('./routes/visitsRoutes')
+const authRoutes=require('./routes/authRoutes')
 
 
 
@@ -21,6 +23,7 @@ app.use((req, res,next)=>{
  
 //routes
 app.use('/api/visits',visitRoutes)
+app.use('/api',authRoutes)
 
 
 //connect to db

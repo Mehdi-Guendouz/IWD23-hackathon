@@ -43,7 +43,7 @@ const AddressSchema = mongoose.Schema({
    
     gender:{
         type :String,
-        required: true
+        required:false,
     },
     
     address:AddressSchema,
@@ -51,7 +51,7 @@ const AddressSchema = mongoose.Schema({
 },{timestamps:true})
 
 // static create an account method
-DoctorSchema.statics.signup = async function(password,firstName,familyName,gender,address,email,speciality,birthDate) {
+DoctorSchema.statics.signup = async function(password,firstName,familyName,email,gender,address,speciality,birthDate) {
   // validation
   if (!email || !password) {
     throw Error('You must fill the email and the password field')
@@ -62,7 +62,7 @@ DoctorSchema.statics.signup = async function(password,firstName,familyName,gende
  // if (!validator.isStrongPassword(password)) {
    // throw Error('Password not strong enough')
   //}
-  const exists = await this.findOne({ "contacts.email":contacts.email })
+  const exists = await this.findOne({ "email":email })
 
   if (exists) {
     throw Error('Email already in use')
