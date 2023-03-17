@@ -29,7 +29,7 @@ const ordonnanceSchema = new Schema({
 },{timestamps:true})
 
 const request =Schema({
-    doctor :       { type: Schema.Types.ObjectId,
+    doctor :        { type: Schema.Types.ObjectId,
     ref: 'Doctor'}
 })
 

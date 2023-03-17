@@ -15,7 +15,7 @@ const visitRoutes=require('./routes/visitsRoutes')
 const authRoutes=require('./routes/authRoutes')
 const ratingRoutes=require('./routes/ratingRoutes')
 const appointmentRoutes=require('./routes/appointmentRoutes')
-
+const recommendationRoutes=require('./routes/recommendationRoutes')
 
 //middleware
 app.use(express.json())
@@ -29,6 +29,8 @@ app.use('/api/visits',visitRoutes)
 app.use('/api',authRoutes)
 app.use('/api/rating',ratingRoutes)
 app.use('/api/appointment',appointmentRoutes)
+
+app.use('/api/recommend',recommendationRoutes)
 //connect to db
 mongoose.connect(process.env.db_uri).then(()=>{
     //listen for requests

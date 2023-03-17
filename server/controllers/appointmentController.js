@@ -15,4 +15,14 @@ try{
 
 }
 }
+const acceptAppointment=async (req, res)=>{
+    try{
+       const {app}=req.body
+       const appointment=await Appointment.findOneAndUpdate({_id:app},{status:'accepted'})
+       res.status(200).json(appointment)
+    }catch(err){
+        res.status(400).json(err)
+    
+    }
+    }
 module.exports = { requestAppointment}
