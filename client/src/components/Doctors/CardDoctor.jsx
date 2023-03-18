@@ -122,5 +122,5 @@ const CardDoctor = () => {
         </div>
     );
 }
-
+}
 export default CardDoctor;
