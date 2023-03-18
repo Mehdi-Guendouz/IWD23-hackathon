@@ -12,6 +12,7 @@ const Hero = () => {
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, totam magnam. Nam alias nisi corporis fuga id iste quam voluptates?</p>
             </div>
             <div className="right">
+                <img src="" alt="" />
                 <img src="./img/hero.png" alt="hello" />
             </div>
             <div className="cards">
