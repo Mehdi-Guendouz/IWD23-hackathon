@@ -1,6 +1,6 @@
 # AiDoc
 
-This is the [AiDoc](https://github.com/MehidGN/IWD23-hackathon)  project bootstrapped using `React-JS Node-js Express.js Mongodb  Tailwind CSS and Sass CSS Framer-motion Materil UI Flask Python`.
+This is the [AiDoc](https://github.com/MehidGN/IWD23-hackathon)  project bootstrapped using `React-JS Node-js Express.js Mongodb  Tailwind CSS and Sass CSS Framer-motion Materil UI Flask Python Jupyter Notebook`.
 
 
 AiDoc provides patients with an easy and efficient way to access medical care by connecting them to the right doctor based on their symptoms. By using AI technology, the platform is able to suggest the most appropriate doctor and appointment times based on the doctor's availability. The rating system for both patients and doctors also helps to ensure that patients are receiving high-quality care from qualified and reliable healthcare professionals.
