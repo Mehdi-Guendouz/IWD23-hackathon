@@ -31,7 +31,7 @@ export const SearchSection = () => {
                     </div>
                 <input type="search" id="default-search" class="block w-full p-4 py-5 pl-16 text-md text-gray-900 border border-gray-300 rounded-2xl" placeholder="Search Heart...." required/>
             </div>
-            <div className="flex bg-white border rounded-xl border-gray-300 flex-row py-2 px-3 w-52  space-x-3 items-center">
+            <div className="flex bg-white border rounded-xl border-gray-300 flex-row py-2 px-3 w-52  space-x-3 items-center ">
                 <LocationIcon className="w-14"/>
                 <div className="flex flex-col justify-center  items-start">
                     <span className="text-xs text-gray-600">Location</span>
@@ -66,7 +66,7 @@ export const SearchSection = () => {
             })}
             
         </div>
-        <div className="px-2 flex flex-row justify-between overflow-x-scroll space-x-2 w-full py-4">
+        <div className="px-2 flex flex-row justify-between overflow-x-scroll space-x-2 w-full py-4 overflow-section">
             <div className="min-w-[9rem] bg-white rounded-2xl h-28 flex flex-col space-y-2 items-center justify-center">
                 <HeartIcon className="w-12 h-12"/>
                 <span className="font-medium">Cardiologyst</span>
