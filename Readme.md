@@ -78,8 +78,8 @@ The project is devided in three section client AI and server
 
 ### Content
 
-There are mainly 7 pages starting with the: landing page / login / sign up / Doctor profile / Medical History / Chat Ai / Dashboard, and there is the mobile version without implementation.
+There are mainly 7 pages starting with the: `landing page / login / sign up / Doctor profile / Medical History / Chat Ai / Dashboard`, and there is the mobile version without implementation.
 
-About the server, we have: rating system / authentication / appointment / doctor & visitor / recommendation (using AI).
+About the server, we have: `rating system / authentication / appointment / doctor & visitor / recommendation (using AI)`.
 
 About the AI, we have been able to achieve 97% accuracy, and we linked the AI with the back-end using Flask with Express.js.
