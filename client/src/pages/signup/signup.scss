@@ -1,0 +1,153 @@
+.signup-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    padding: 20px 0px;
+
+    .left{
+        display: flex;
+        flex: 1;
+        order: 2;
+        border-radius: 8px;
+        img{
+            height: 110vh;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex: 1;
+        order: 1;
+        transform: translateX(-110px);
+
+
+        .form-container{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-direction: column;
+
+            span{
+                color: #2D3748;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+            }
+
+            h1{
+                color: #1E1E1E;
+                font-weight: 700;
+                font-size: 30px;
+                line-height: 35px;
+            }
+
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px 0px;
+
+                .item-dub{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+
+                    .icon-container{
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 7px;
+                        background-color: #EFF2F1;
+                        width: 160px;
+                        padding: 10px 7px;
+                        border-radius: 8px;
+                        text-align: center;
+                        cursor: pointer;
+
+                        .icon{
+                            transition: all 0.5s ease;
+                        }
+
+                        .green{
+                            color: #66CA98;
+                        }
+                    }
+                   
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                        
+                        .icon{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 40px;
+                            width: 40px;
+                            // background-color: #66CA98;
+                            border-radius: 8px;
+
+                            .class-white{
+                                color: white !important;
+                            }
+                        }
+
+                        input{
+                            width: 160px;
+                            border: 1px solid #E8E8E8;
+                            border-radius: 8px;
+                            padding: 15px;
+                        }
+
+                        label{
+                            font-weight: 400;
+                            font-size: 16px;
+                            color: #4A5568;
+                        }
+                    }
+                    
+
+                }
+
+                .item{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+                   
+
+                    input{
+                        width: 350px;
+                        border: 1px solid #E8E8E8;
+                        border-radius: 8px;
+                        padding: 15px;
+                    }
+
+                    label{
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #4A5568;
+                    }
+                }
+
+
+                .loginBtn{
+                    background-color: #66CA98;
+                    border-radius: 8px;
+                    color: white;
+                    padding: 15px 0;
+                }
+
+            }
+
+            
+        }
+        
+    }
+
+}
