@@ -85,6 +85,51 @@ const DashLeft = () => {
                 </div>
                 <div className="consultation">
                     <h1>Consultation</h1>
+                    <div className='container'>
+                        <div className="card">
+                            <div className="information">
+                                <div className="profile">
+                                    DW
+                                </div>
+                                <div className='prs'>
+                                    <h2>Denzel White</h2>
+                                    <span>Male - 28 Years 3 Months</span>
+                                </div>
+                                <div className='image-item'>
+                                    <img src="./icons/dots.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="illnesses">
+                            <div className="item">
+                                <img src="./icons/feever.png" alt="" />
+                                fever
+                            </div>
+                            <div className="item">
+                                <img src="./icons/gaugh.png" alt="" />
+                                cough
+                            </div>
+                            <div className="item">
+                                <img src="./icons/heart.png" alt="" />
+                                heart Burn
+                            </div>
+                        </div>
+                        <div className="line"></div>
+                        <div className="last-item">
+                            <div className="item">
+                                <h4>Last Checked</h4>
+                                <p>Dr Everly on 21 April 2021 Prescription <span>#2J983KT0</span></p>
+                            </div>
+                            <div className="item">
+                                <h4>Observation</h4>
+                                <p>Dr Everly on 21 April 2021 Prescription <span>#2J983KT0</span></p>
+                            </div>
+                            <div className="item">
+                                <h4>Prescription</h4>
+                                <p>Paracetmol - 2 times a day Dizopam - Day and Night before meal Wikoryl</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
