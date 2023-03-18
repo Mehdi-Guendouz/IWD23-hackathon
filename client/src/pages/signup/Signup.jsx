@@ -1,12 +1,53 @@
 import React , {useState} from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import "./signup.scss"
-
+import {motion} from "framer-motion"
 const Signup = () => {
     const [role, setRole] = useState('');
     const [gender, setGender] = useState('');
-
-
+    const [fname,setFname] = useState('');
+    const [lname,setLname] = useState('');
+    const [email,setEmail] = useState("");
+    const [pass,setPass] = useState("");
+    const [blood,setBlood] = useState("");
+    const [weight,setWeight] = useState("");
+    const [height,setHeight] = useState("");
+    const [allergies,setAllergies] = useState("");
+    const [ills,setIlls] = useState("");
+    const [birth,setBirth] = useState("");
+    const handleFname = (e) => {
+        setFname(e.target.value)
+    }
+    const handleLname = (e) => {
+        setLname(e.target.value)
+    }
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
+    const handlePass = (e) => {
+        setPass(e.target.value)
+    }
+    const handleBlood = (e) => {
+        setBlood(e.target.value)
+    }
+    const handleWeight = (e) => {
+        setWeight(e.target.value)
+    }
+    const handleHeight = (e) => {
+        setHeight(e.target.value)
+    }
+    const handleAllergies = (e) => {
+        setAllergies(e.target.value)
+    }
+    const handleIlls = (e) => {
+        setIlls(e.target.value)
+    }
+    const handleBirth = (e) => {
+        setBirth(e.target.value)
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
     const handelRole = (text) =>{
         if (text === 'patient'){
             setRole('patient');
@@ -29,8 +70,8 @@ const Signup = () => {
 
     return (
         <>
-            <Navbar />
-            <div className='signup-container'>
+            <Navbar inLogin={true}/>
+            <motion.div className='signup-container font-poppins'>
             <div className='left'>
                 <img src="./img/signup.png" alt="" />
             </div>
@@ -38,15 +79,15 @@ const Signup = () => {
                 <div className='form-container'>
                     <span>Welcome!</span>
                     <h1>Enter your information</h1>
-                    <form className="">
+                    <form className="" onSubmit={(e)=>handleSubmit(e)}>
                         <div className="item-dub">
                             <div>
                                 <label >First Name</label>
-                                <input type="text"  placeholder='Mehdi'/>
+                                <input onChange={(e)=>handleFname(e)} type="text"  placeholder='Mehdi'/>
                             </div>
                             <div>
                                 <label >Last Name</label>
-                                <input type="text"  placeholder='Guendouz'/>
+                                <input onChange={(e)=>handleLname(e)} type="text"  placeholder='Guendouz'/>
                             </div>
                         </div>
                         <div className="item-dub">
@@ -77,39 +118,47 @@ const Signup = () => {
                                 <span className={`${gender === 'male' ? "green" : "text-black"}`}>Male</span>
                             </div>
                         </div>
+                        <div className="item">
+                            <label >Email</label>
+                            <input onChange={(e)=>handleEmail(e)} type="text"  />
+                        </div>
+                        <div className="item">
+                            <label >Password</label>
+                            <input onChange={(e)=>handlePass(e)} type="password" />
+                        </div>
                         <div className="item-dub">
                             <div>
                                 <label >Blood Type</label>
-                                <input type="text"  placeholder='A+'/>
+                                <input onChange={(e)=>handleBlood(e)} type="text"  placeholder='A+'/>
                             </div>
                             <div>
                                 <label >Birthday</label>
-                                <input type="date"  placeholder='1/1/2023'/>
+                                <input onChange={(e)=>handleBirth(e)} type="date"  placeholder='1/1/2023'/>
                             </div>
                         </div>
                         <div className="item-dub">
                             <div>
                                 <label >Weight</label>
-                                <input type="number"  placeholder='20'/>
+                                <input onChange={(e)=>handleWeight(e)} type="number"  placeholder='20'/>
                             </div>
                             <div>
                                 <label >Height</label>
-                                <input type="number"  placeholder='1.90m'/>
+                                <input onChange={(e)=>handleHeight(e)} type="number"  placeholder='1.90m'/>
                             </div>
                         </div>
                         <div className="item">
                             <label >Allergies</label>
-                            <input type="text"  />
+                            <input onChange={(e)=>handleAllergies(e)} type="text"  />
                         </div>
                         <div className="item">
                             <label >Chronical illnesses</label>
-                            <input type="text" />
+                            <input onChange={(e)=>handleIlls(e)} type="text" />
                         </div>
-                        <button className='loginBtn'>Register</button>
+                        <button type='submit' className='loginBtn'>Register</button>
                     </form>
                 </div>
             </div>
-        </div>
+        </motion.div>
         </>
     );
 }
