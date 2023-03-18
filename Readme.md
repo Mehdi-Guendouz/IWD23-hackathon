@@ -41,37 +41,37 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 The project is devided in three section client AI and server
 
 ```bash
-└── repository/
+    └── repository/
     ├── Ai/
     │   ├── _pycache_
     │   ├── model
     │   └── templates
-    └── client/
-        ├── node_modules
-        ├── public
-        ├── src/
-        │   ├── components/
-        │   │   ├── chat
-        │   │   ├── dashleft
-        │   │   ├── dashRight
-        │   │   ├── doctor-profle
-        │   │   ├── doctors
-        │   │   ├── footer
-        │   │   ├── hero
-        │   │   ├── navbar
-        │   │   ├── sevice
-        │   │   ├── steps
-        │   │   └── treatment
-        │   ├── context
-        │   ├── hooks
-        │   ├── icons
-        │   ├── img
-        │   └── pages
-        └── server/
-            ├── controllers
-            ├── middleware
-            ├── models
-            └── routes
+    ├── client/
+    │   ├── node_modules
+    │   ├── public
+    │   └── src/
+    │       ├── components/
+    │       │   ├── chat
+    │       │   ├── dashleft
+    │       │   ├── dashRight
+    │       │   ├── doctor-profle
+    │       │   ├── doctors
+    │       │   ├── footer
+    │       │   ├── hero
+    │       │   ├── navbar
+    │       │   ├── sevice
+    │       │   ├── steps
+    │       │   └── treatment
+    │       ├── context
+    │       ├── hooks
+    │       ├── icons
+    │       ├── img
+    │       └── pages
+    └── server/
+        ├── controllers
+        ├── middleware
+        ├── models
+        └── routes
 ```
 
 #### The client contains the front-end side using React, the server contains the back-end, and the AI model is in the AI folder.s in the AI folder
