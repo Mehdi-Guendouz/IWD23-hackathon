@@ -5,8 +5,7 @@ const Schema = mongoose.Schema
 const ordonnanceSchema = new Schema({
     med:[{
         name:String,
-
-    }]
+     }]
 
 },{timestamps:true})
 
@@ -21,7 +20,7 @@ const ordonnanceSchema = new Schema({
         ref: 'Patient'
     },
     ordonnance :{type:ordonnanceSchema},
-    date:Date,
+   // date:Date,
     note:String,
 
     

@@ -4,6 +4,7 @@ import joblib
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from symptomps import symptomps
+from flask_cors import CORS
 def processAi(text):
   
   X_pred = pd.DataFrame(data=None, columns=symptomps)
@@ -17,7 +18,7 @@ def processAi(text):
     else:
       row[col]=0
   if c<3:
-    raise ValueError("Provide more symptomps please!")
+    return -1
   X_pred = X_pred.append(row,ignore_index=True)
   model = joblib.load("./model/model.joblib")
   y_pred = model.predict(X_pred)
@@ -33,11 +34,19 @@ def processAi(text):
 
 
 app = Flask(__name__)
+CORS(app)
 @app.route("/predict",methods=["POST"])
 def predict():
-    json_ =  request.json["text"]
+    
+    print("am here")
+    # data=request.get_json(force=True)["data"]
+    data=request.get_json()["data"]
+    print(data)
+    json_ =  data["text"]
 
     resp = processAi(json_)
+    if resp==-1:
+       return jsonify({"msg":"Provide more symptomps please!"})
     df=pd.read_csv('Desease-speciality.csv')
     row = df.loc[df['Disease'] == resp[0][0]]
   

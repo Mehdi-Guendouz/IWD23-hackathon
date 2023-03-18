@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import "./login.scss";
 import { motion } from "framer-motion";
-
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+    const nav=useNavigate()
     const [pass,setPass] = useState("")
     const [email,setEmail] = useState("")
     const handleChangeEmail = (e) => {
@@ -13,7 +15,25 @@ const Login = () => {
         setPass(e.target.value)
     }
     const handleSubmit = (e) => {
-        console.log(email+" "+pass)
+        e.preventDefault();
+        axios.post('http://localhost:5000/api/doctor/login/', {
+            email, password:pass
+            }
+            ).then(response => {
+            nav('/doctor')
+            })
+            .catch(error => {
+                axios.post('http://localhost:5000/api/patient/login/', {
+                    email, password:pass
+                    }
+                    ).then(response => {
+                    nav('/')
+                    })
+                    .catch(error => {
+                    console.error('Error:', error);
+                    });
+
+            });
     }
     return (
         <>

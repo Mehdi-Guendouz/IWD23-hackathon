@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./card.scss";
 
-const CardDoctor = () => {
+const CardDoctor = ({doctor}) => {
     return (
         <div className='card-container'>
             <div className="left">
@@ -11,8 +11,8 @@ const CardDoctor = () => {
                         <img src="./img/doctor.png" alt="" />
                     </div>
                     <div className="desc">
-                        <h3>Dr. Tasnim Sayed</h3>
-                        <span>Pediatrics</span>
+                        <h3>Dr. {doctor.firstName +' '+doctor.familyName}</h3>
+                        <span>{doctor.speciality}</span>
                         <div className="contact">
                             <img src="./icons/message.png" alt="" />
                             <img src="./icons/call.png" alt="" />
@@ -36,7 +36,7 @@ const CardDoctor = () => {
                     <div className="item">
                         <span>Patient</span>
                         <div className="">
-                            +423
+                            {doctor.patientsNumber}
                         </div>
                     </div>
                     <div className="item">
@@ -48,7 +48,7 @@ const CardDoctor = () => {
                     <div className="item">
                         <span>Rating</span>
                         <div className="">
-                            +423
+                            {doctor.rating.score+'/5'}
                         </div>
                     </div>
                 </div>

@@ -23,10 +23,10 @@ const loginDoctor = async (req, res) => {
 //signup Doctor
 const signupDoctor = async function(req, res) {
     
-    const {email, password,firstName,familyName} = req.body
-    console.log(email)
+    const {firstName, familyName, email, password, speciality, phoneNumber, birthDate, gender, graduationYear, address, bloodType,allergies, chronicalIlnesses} = req.body
+    
     try {
-      const doctor = await Doctor.signup(firstName, familyName, email, password, speciality, phoneNumber, birthDate, gender, graduationYear, address, bloodType)
+      const doctor = await Doctor.signup(firstName, familyName, email, password, speciality, phoneNumber, birthDate, gender, graduationYear, address, bloodType,allergies, chronicalIlnesses)
       token =createtoken({doctor:doctor._id})
       res.status(200).cookie('token',token,{httpOnly:true,}).json({token})
     } catch (error) {
@@ -50,10 +50,10 @@ const loginPatient = async (req, res) => {
   //signup Patient
   const signupPatient = async function(req, res) {
       
-      const {email, password,firstName,familyName} = req.body
-      console.log(email)
+    const {firstName, familyName, email, password,   birthDate, gender,  bloodType,allergies, chronicalIlnesses} = req.body
+  
       try {
-        const user = await Patient.signup(firstName, familyName, email, password, birthDate, gender, bloodType, height, weight, allergies, chronicalIlnesses)
+        const user = await Patient.signup(firstName, familyName, email, password,  birthDate, gender,  bloodType,allergies, chronicalIlnesses)
         token =createtoken({patient:user._id})
         res.status(200).cookie('token',token,{httpOnly:true,}).json({token})
       } catch (error) {

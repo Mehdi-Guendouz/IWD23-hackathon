@@ -2,7 +2,11 @@ import React , {useState} from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import "./signup.scss"
 import {motion} from "framer-motion"
+import axios from "axios"
+import { useNavigate } from 'react-router-dom';
+
 const Signup = () => {
+    const nav = useNavigate();
     const [role, setRole] = useState('');
     const [gender, setGender] = useState('');
     const [fname,setFname] = useState('');
@@ -15,6 +19,8 @@ const Signup = () => {
     const [allergies,setAllergies] = useState("");
     const [ills,setIlls] = useState("");
     const [birth,setBirth] = useState("");
+    const [spec,setSpec] = useState("");
+    const [adress,setAdress] = useState("");
     const handleFname = (e) => {
         setFname(e.target.value)
     }
@@ -45,8 +51,47 @@ const Signup = () => {
     const handleBirth = (e) => {
         setBirth(e.target.value)
     }
+    const handleSpec = (e) => {
+        setSpec(e.target.value)
+    }
+    const handleAdress = (e) => {
+        setAdress(e.target.value)
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (role=='doctor'){
+            
+
+            axios.post('http://localhost:5000/api/doctor/login/', {
+            email, birthDate:birth, gender, firstName:fname, 
+            familyName:lname, password:pass, bloodType:blood,
+             weight, height, allergies, chronicalIlnesses:ills,address:adress,speciality:spec
+            }
+            ).then(response => {
+            console.log('Response:', response.data);
+            nav('/doctor')
+            })
+            .catch(error => {
+            console.error('Error:', error);
+            });
+        }else{
+
+            axios.post('http://localhost:5000/api/patient/signup', {
+                email, birthDate:birth, gender, firstName:fname, 
+                familyName:lname, password:pass, bloodType:blood,
+                 weight, height, allergies, chronicalIlnesses:ills
+            }
+            ).then(response => {
+
+            console.log('Response:', response.data);
+            nav('/')
+            })
+            .catch(error => {
+            console.error('Error:', error);
+            });
+
+        }
+
     }
     const handelRole = (text) =>{
         if (text === 'patient'){
@@ -126,6 +171,10 @@ const Signup = () => {
                             <label >Password</label>
                             <input onChange={(e)=>handlePass(e)} type="password" />
                         </div>
+                        <div className={role==="doctor"?"item":"hidden"}>
+                            <label >Speciality</label>
+                            <input onChange={(e)=>handleSpec(e)} type="text" />
+                        </div>
                         <div className="item-dub">
                             <div>
                                 <label >Blood Type</label>
@@ -143,8 +192,12 @@ const Signup = () => {
                             </div>
                             <div>
                                 <label >Height</label>
-                                <input onChange={(e)=>handleHeight(e)} type="number"  placeholder='1.90m'/>
+                                <input onChange={(e)=>handleHeight(e)} type="text"  placeholder='1.90m'/>
                             </div>
+                        </div>
+                        <div className={role==="doctor"?"item":"hidden"}>
+                            <label >Address</label>
+                            <input onChange={(e)=>handleAdress(e)} type="text"  />
                         </div>
                         <div className="item">
                             <label >Allergies</label>
