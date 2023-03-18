@@ -4,7 +4,7 @@ import { SuggestionsSection } from "../components/chat/SuggestionsSection"
 import Navbar from "../components/navbar/Navbar"
 
 export const ChatPage = () => {
-    const [msgs,setMsgs] = useState([["send","Hello, Yes, I feel a high body temperture."],["rec","Can you provide more details?"]])
+    const [msgs,setMsgs] = useState([["send","Hello, Yes, I feel a high body temperture."],["ext","Can you provide more details?"]])
     
     return (
     <div className="overflow-y-hidden h-screen">
