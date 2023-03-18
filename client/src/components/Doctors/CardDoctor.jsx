@@ -1,10 +1,30 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import "./card.scss";
-
+import { useRef, useState } from 'react'
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 const CardDoctor = () => {
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
     return (
+        <div className='font-poppins'>
+
+ 
         <div className='card-container'>
+            
             <div className="left">
                 <div className="info">
                     <div className="profile">
@@ -24,7 +44,7 @@ const CardDoctor = () => {
                     </div>
                 </div>
                 <div className="appointment">
-                    <Link>
+                    <Link onClick={handleClickOpen}>
                         Make appointment
                         <div>
                             <img src="./icons/arrow.png" alt="" />
@@ -71,6 +91,28 @@ const CardDoctor = () => {
                     <img src="./img/map.png" alt="" />
                 </div>
             </div>
+        </div>
+        <Dialog open={open} onClose={handleClose}>
+        <DialogTitle className='font-poppins'>Book an Appointment</DialogTitle>
+        <DialogContent>
+          <DialogContentText className="font-poppins">
+            With Dr. Taylor Swift
+          </DialogContentText>
+          <TextField className="font-poppins"
+            
+            margin="dense"
+            id="name"
+            label="Date"
+            type="date"
+            fullWidth
+            variant="standard"
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button className="font-poppins" onClick={handleClose}>Cancel</Button>
+          <Button className="font-poppins" onClick={handleClose}>Set</Button>
+        </DialogActions>
+      </Dialog>
         </div>
     );
 }
