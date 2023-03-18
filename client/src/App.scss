@@ -2,3 +2,8 @@
     display: flex;
     justify-content: center;
 }
+
+.overflow-section::-webkit-scrollbar{
+    display: none;
+  }
+
