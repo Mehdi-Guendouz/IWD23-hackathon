@@ -15,11 +15,12 @@ const Doctors = () => {
       }, [doctors.length]);
     return (
         <div className='doctor-container'>
+
             {doctors&&doctors.map((item)=>(
                   <CardDoctor doctor={item} />
             ))}
             
-         
+
         </div>
     );
 }

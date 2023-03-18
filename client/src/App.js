@@ -8,6 +8,7 @@ import {DoctorProfile} from './pages/DoctorProfile';
 import { ChatPage } from './pages/ChatPage';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
+import Dashboard from './pages/dash/Dashboard';
 
 
 
@@ -31,10 +32,10 @@ function App() {
         <Route path='/doctor' element={<DoctorProfile/>} />
       </Route>
 
+        <Route path='/login' element={<Login />} />
         <Route path='/chat' element={<ChatPage/>} />
-
-      <Route path='/login' element={<Login />} />
-      <Route path='/signup' element={<Signup />} />
+        <Route path='/dashboard' element={<Dashboard/>} />
+        <Route path='/signup' element={<Signup />} />
 
       </Routes>
     </BrowserRouter>
