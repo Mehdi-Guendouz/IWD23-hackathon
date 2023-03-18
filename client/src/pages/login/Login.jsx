@@ -4,8 +4,13 @@ import "./login.scss";
 import { motion } from "framer-motion";
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { useDataLayerValue } from '../../contexte/dataLayar';
+
 const Login = () => {
     const nav=useNavigate()
+    const data = useDataLayerValue()
+    const { state, dispatch } = data;
+    
     const [pass,setPass] = useState("")
     const [email,setEmail] = useState("")
     const handleChangeEmail = (e) => {
@@ -20,7 +25,7 @@ const Login = () => {
             email, password:pass
             }
             ).then(response => {
-            nav('/doctor')
+                nav('/doctor')
             })
             .catch(error => {
                 axios.post('http://localhost:5000/api/patient/login/', {
