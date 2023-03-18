@@ -10,11 +10,10 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
+import {motion, transform} from "framer-motion"
+
 
 const CardDoctor = ({doctor}) => {
-
-
-const CardDoctor = () => {
     const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
@@ -49,15 +48,17 @@ const CardDoctor = () => {
                         <img src="./icons/dots.png" alt="" />
                     </div>
                 </div>
-                <div className="appointment">
+                <motion.div className="appointment" whileHover={{scale:1,translateX:5,translateY:-5,shadow:1}}>
                     <Link onClick={handleClickOpen}>
                         Make appointment
-                        <div>
+                        <motion.div whileHover={{translateX:10,scale:1.1}}
+                    
+                    >
                             <img src="./icons/arrow.png" alt="" />
                             <img src="./icons/arrow.png" alt="" />
-                        </div>
+                        </motion.div>
                     </Link>
-                </div>
+                </motion.div>
                 <div className="rating">
                     <div className="item">
                         <span>Patient</span>
@@ -122,5 +123,5 @@ const CardDoctor = () => {
         </div>
     );
 }
-}
+
 export default CardDoctor;
