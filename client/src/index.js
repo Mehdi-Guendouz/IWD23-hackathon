@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
-import { DoctorsContextProvider } from './context/DoctorsContext';
+// import { DoctorsContextProvider } from './context/DoctorsContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <DoctorsContextProvider>
+    {/* <DoctorsContextProvider> */}
     <App />
-    </DoctorsContextProvider>
+    {/* </DoctorsContextProvider> */}
   </React.StrictMode>
 );
 
