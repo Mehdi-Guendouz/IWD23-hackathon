@@ -4,7 +4,7 @@ import { ReactComponent as SeenIcon } from "../../icons/arrows.svg"
 export const Message = ({type,msg}) => {
     if (type==="ext") {
         return (
-        <div className={"flex flex-col items-start w-1/2"}>
+<div className={"flex flex-col items-start w-1/2"}>
                 <div className={"flex flex-row-reverse items-end "}>
                     <span className={"py-2 w-full px-3 text-white bg-[#6295E2] rounded-xl rounded-bl-none relative"}>{msg}</span>
                     <img className={"mr-3 w-6 h-6"} src={require("../../icons/K.png")} alt="" />
@@ -13,7 +13,6 @@ export const Message = ({type,msg}) => {
                     <span className="font-semibold">Avaible Doctors</span>
                     <span className="text-gray-500">Select a Doctor</span>
                     <div className="flex flex-col space-y-2 pt-4">
-                        
                         <div className="flex flex-row justify-start space-x-2">
                             <img className="w-14 h-14 object-cover rounded-full" src={require("../../img/taylor.png")} alt="" />
                             <div className="text-left flex flex-col justify-between py-1.5">
@@ -21,7 +20,13 @@ export const Message = ({type,msg}) => {
                                 <span className="text-gray-400 text-xs">Cardiologist</span>
                             </div>
                         </div>
-                        
+                        <div className="flex flex-row justify-start space-x-2">
+                            <img className="w-14 h-14 object-cover rounded-full" src={require("../../img/doctor.png")} alt="" />
+                            <div className="text-left flex flex-col justify-between py-1.5">
+                                <span className="text-gray-900 font-semibold text-sm w-fit">Dr. Manel Belguenbour</span>
+                                <span className="text-gray-400 text-xs">Cardiologist</span>
+                            </div>
+                        </div>
                     </div>
                     <button className="bg-[#EBE4FF] hover:bg-violet-200 transition-all mt-8 text-[#9974FF] py-2 px-12 font-semibold rounded-xl">Follow Doctors</button>
                 </div>
