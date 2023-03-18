@@ -36,6 +36,16 @@ const getAllVisitsDoctor=async (req, res)=>{
         res.status(400).json(err)
     }
     }
+  //get last visit for a doctor   
+const getlastVisit=async (req, res)=>{
+        try{
+           
+           const last=await Visit.findOne({doctor:req.user},{},{ sort: { 'createdAt' : -1 } })
+           res.status(200).json(last)
+        }catch(err){
+            res.status(400).json(err)
+        }
+        }
 //get on visit patient pov
 const getVisitPatient=async (req, res)=>{
     try{
@@ -56,4 +66,4 @@ const getVisitDoctor=async (req, res)=>{
         res.status(400).json(err)
     }
     }
-module.exports = {createVisit,getAllVisitsPatient,getAllVisitsDoctor,getVisitPatient,getVisitDoctor}
+module.exports = {createVisit,getAllVisitsPatient,getAllVisitsDoctor,getVisitPatient,getVisitDoctor,getlastVisit}
