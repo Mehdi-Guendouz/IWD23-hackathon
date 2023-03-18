@@ -14,10 +14,13 @@ router.post('/',async(req, res)=>{
 
     let sortedDoctors = doctors.sort(
         (p1, p2) => (p1.rating.score < p2.rating.score) ? 1 : (p1.rating.score > p2.rating.score) ? -1 : 0);
-    if (sortedDoctors==[]){
+    console.log('1',sortedDoctors)
+    if (sortedDoctors.length==0){
         const haha=await Doctor.find({firstName:'Anis'})
-        res.status(200).json([haha])
+        console.log('2',haha)
+        return res.status(200).json([haha])
     }
+   
     res.status(200).json(sortedDoctors)
     }catch(err){
         return res.status(400).json(err)

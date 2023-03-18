@@ -48,12 +48,14 @@ export const LiveChat = ({msgs,fct}) => {
                     if (response.data?.msg){
                     fct(msgs.concat([["send",msg],["rec",response.data.msg]]))} 
                     if (response.data?.prediction){
-               
+
                         const responsee = await axios.post("http://localhost:5000/api/recommend/", 
                             
                             {'speciality':response.data.prediction}) 
                           
                             console.log(responsee.data)
+                            fct(msgs.concat([["send",msg],["ext",response.data.msg]])) 
+
 
                     }  
                     res([response.data]);

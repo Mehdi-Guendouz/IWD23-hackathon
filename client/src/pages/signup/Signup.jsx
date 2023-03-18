@@ -112,20 +112,29 @@ const Signup = () => {
         }
        
     }
+    const [step,setStep] = useState(0);
+    const handleClick = () => {
+        if (step===0){
+            setStep(1);
+        }
+    }
 
     return (
         <>
-            <Navbar inLogin={true}/>
-            <motion.div className='signup-container font-poppins'>
+            <Navbar inLogin={true} inSign={true}/>
+            <motion.div className='signup-container font-poppins flex flex-row'
+            initial={{opacity:0,scale:0.5}}
+            animate={{opacity:1,scale:1}}
+            transition={{duration:0.5}}>
             <div className='left'>
-                <img src="./img/signup.png" alt="" />
+                <img src="./img/signup.png" className='rounded-l-[50px]' alt="" />
             </div>
             <div className='right'>
                 <div className='form-container'>
                     <span>Welcome!</span>
                     <h1>Enter your information</h1>
                     <form className="" onSubmit={(e)=>handleSubmit(e)}>
-                        <div className="item-dub">
+                        <div className={step===0?"item-dub":"hidden"}>
                             <div>
                                 <label >First Name</label>
                                 <input onChange={(e)=>handleFname(e)} type="text"  placeholder='Mehdi'/>
@@ -135,7 +144,7 @@ const Signup = () => {
                                 <input onChange={(e)=>handleLname(e)} type="text"  placeholder='Guendouz'/>
                             </div>
                         </div>
-                        <div className="item-dub">
+                        <div className={step===0?"item-dub":"hidden"}>
                             <div className='icon-container'  onClick={() => handelRole("patient")} >
                                 <div className={`icon ${role === 'patient' ? "bg-[#66CA98]" : "bg-white"}`}>
                                 {role === "patient" ? <img src="./icons/patientW.png" alt="patient" /> : <img src="./icons/patientB.png" alt="patient" />}
@@ -149,7 +158,7 @@ const Signup = () => {
                                 <span className={`${role === 'doctor' ? "green" : "text-black"}`}>I am a Doctor</span>
                             </div>
                         </div>
-                        <div className="item-dub">
+                        <div className={step===0?"item-dub":"hidden"}>
                             <div className='icon-container' onClick={() => handelGender("female")}>
                                 <div className={`icon ${gender === 'female' ? "bg-[#66CA98]" : "bg-white"}`}>
                                 {gender === "female" ? <img src="./icons/femaleW.png" alt="patient" /> : <img src="./icons/femaleB.png" alt="female" />}
@@ -163,19 +172,19 @@ const Signup = () => {
                                 <span className={`${gender === 'male' ? "green" : "text-black"}`}>Male</span>
                             </div>
                         </div>
-                        <div className="item">
+                        <div className={step===0?"item":"hidden"}>
                             <label >Email</label>
                             <input onChange={(e)=>handleEmail(e)} type="text"  />
                         </div>
-                        <div className="item">
+                        <div className={step===0?"item":"hidden"}>
                             <label >Password</label>
                             <input onChange={(e)=>handlePass(e)} type="password" />
                         </div>
-                        <div className={role==="doctor"?"item":"hidden"}>
+                        <div className={role==="doctor" && step===1?"item":"hidden"}>
                             <label >Speciality</label>
                             <input onChange={(e)=>handleSpec(e)} type="text" />
                         </div>
-                        <div className="item-dub">
+                        <div className={step===1?"item-dub":"hidden"}>
                             <div>
                                 <label >Blood Type</label>
                                 <input onChange={(e)=>handleBlood(e)} type="text"  placeholder='A+'/>
@@ -185,7 +194,7 @@ const Signup = () => {
                                 <input onChange={(e)=>handleBirth(e)} type="date"  placeholder='1/1/2023'/>
                             </div>
                         </div>
-                        <div className="item-dub">
+                        <div className={step===1?"item-dub":"hidden"}>
                             <div>
                                 <label >Weight</label>
                                 <input onChange={(e)=>handleWeight(e)} type="number"  placeholder='20'/>
@@ -195,19 +204,19 @@ const Signup = () => {
                                 <input onChange={(e)=>handleHeight(e)} type="text"  placeholder='1.90m'/>
                             </div>
                         </div>
-                        <div className={role==="doctor"?"item":"hidden"}>
+                        <div className={role==="doctor" && step===1?"item":"hidden"}>
                             <label >Address</label>
                             <input onChange={(e)=>handleAdress(e)} type="text"  />
                         </div>
-                        <div className="item">
+                        <div className={step===1?"item":"hidden"}>
                             <label >Allergies</label>
                             <input onChange={(e)=>handleAllergies(e)} type="text"  />
                         </div>
-                        <div className="item">
+                        <div className={step===1?"item":"hidden"}>
                             <label >Chronical illnesses</label>
                             <input onChange={(e)=>handleIlls(e)} type="text" />
                         </div>
-                        <button type='submit' className='loginBtn'>Register</button>
+                        <button type= {step===1?'submit':"button"} onClick={handleClick} className='loginBtn'>{step===1?"Register":"Continue"}</button>
                     </form>
                 </div>
             </div>
