@@ -51,13 +51,10 @@ export const LiveChat = ({msgs,fct}) => {
                
                         const responsee = await axios.post("http://localhost:5000/api/recommend/", 
                             
-                            {'speciality':response.data.prediction}) // body data type must match "Content-Type" header
+                            {'speciality':response.data.prediction}) 
                           
                             console.log(responsee.data)
 
-                       
-                       
-                     
                     }  
                     res([response.data]);
                   })
